@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- 🌈 Gradient Background for Buttons -->
+    <LinearGradientBrush x:Key="ButtonGradientBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="#8ECAE6" Offset="0.0" />
+        <GradientStop Color="#219EBC" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <!-- 🌙 App-wide styling with theme-aware brushes -->
+
+    <!-- Style for ContentPage Background -->
+    <Style TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColorBrush}" />
+    </Style>
+
+    <!-- Labels -->
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource TextColorBrush}" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+
+    <!-- Entry Style -->
+    <Style TargetType="Entry">
+        <Setter Property="TextColor" Value="{DynamicResource TextColorBrush}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundBrush}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HeightRequest" Value="45" />
+        <Setter Property="Margin" Value="0,5" />
+       
+    </Style>
+
+    <!-- Picker Style -->
+    <Style TargetType="Picker">
+        <Setter Property="TextColor" Value="{DynamicResource TextColorBrush}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundBrush}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HeightRequest" Value="45" />
+        <Setter Property="Margin" Value="0,5" />
+        
+    
+    </Style>
+
+    <!-- Editor Style -->
+    <Style TargetType="Editor">
+        <Setter Property="TextColor" Value="{DynamicResource TextColorBrush}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundBrush}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Margin" Value="0,5" />
+      
+        <Setter Property="HeightRequest" Value="100" />
+        
+    </Style>
+
+    <!-- Button Style with Gradient Brush -->
+    <Style TargetType="Button">
+        <Setter Property="TextColor" Value="{DynamicResource TextColorBrush}" />
+        <Setter Property="Background" Value="{StaticResource ButtonGradientBrush}" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Margin" Value="0,10" />
+    </Style>
+
+</ResourceDictionary>

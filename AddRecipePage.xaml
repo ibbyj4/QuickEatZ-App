@@ -1,0 +1,20 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="assignment_2425.AddRecipePage">
+
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Recipe Name" />
+            <Entry x:Name="nameEntry" Placeholder="e.g. Spaghetti Bolognese" />
+
+            <Label Text="Ingredients" />
+            <Editor x:Name="ingredientsEditor" Placeholder="List ingredients..." HeightRequest="100"/>
+
+            <Label Text="Category" />
+            <Entry x:Name="categoryEntry" Placeholder="e.g. Pasta, Vegan, Dessert" />
+
+            <Button Text="Add Recipe" Clicked="OnAddRecipeClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

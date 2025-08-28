@@ -1,0 +1,42 @@
+﻿<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:assignment_2425"
+             x:Class="assignment_2425.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Gradient Background for Buttons -->
+            <LinearGradientBrush x:Key="ButtonGradientBrush" StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#8ECAE6" Offset="0.0"/>
+                <GradientStop Color="#219EBC" Offset="1.0"/>
+            </LinearGradientBrush>
+
+            <!-- Light Mode Colors -->
+            <Color x:Key="PrimaryLight">#512BD4</Color>
+            <Color x:Key="PrimaryDarkLight">#ac99ea</Color>
+            <Color x:Key="PrimaryDarkTextLight">#242424</Color>
+            <Color x:Key="SecondaryLight">#DFD8F7</Color>
+            <Color x:Key="SecondaryDarkTextLight">#9880e5</Color>
+            <Color x:Key="TertiaryLight">#2B0B98</Color>
+
+            <!-- Dark Mode Colors -->
+            <Color x:Key="PrimaryDarkMode">#3D1C7C</Color>
+            <Color x:Key="PrimaryDarkDarkMode">#9A73B7</Color>
+            <Color x:Key="PrimaryDarkTextDarkMode">#F5F5F5</Color>
+            <Color x:Key="SecondaryDarkMode">#C4B8E6</Color>
+            <Color x:Key="SecondaryDarkTextDarkMode">#7369B8</Color>
+            <Color x:Key="TertiaryDarkMode">#1E1C8B</Color>
+
+            <!-- Apply colors dynamically based on theme -->
+            <SolidColorBrush x:Key="PrimaryBrush" Color="{DynamicResource Primary}"/>
+            <SolidColorBrush x:Key="SecondaryBrush" Color="{DynamicResource Secondary}"/>
+            <SolidColorBrush x:Key="TertiaryBrush" Color="{DynamicResource Tertiary}"/>
+
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

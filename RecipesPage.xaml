@@ -1,0 +1,143 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:assignment_2425"
+             x:Class="assignment_2425.RecipesPage"
+             Title="Recipes"
+             BackgroundColor="#FFF8F0">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:InverseBoolConverter x:Key="InverseBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <!-- Page Heading -->
+            <Label Text="🍽️ Explore Recipes"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#D72638"
+                   HorizontalOptions="Center" />
+
+            <!-- Search Bar -->
+            <Frame HasShadow="True"
+                   BorderColor="#8ECAE6"
+                   CornerRadius="10"
+                   Padding="0">
+                <Entry x:Name="IngredientEntry"
+                       Placeholder="Enter ingredients (e.g., eggs, cheese)"
+                       BackgroundColor="White"
+                       PlaceholderColor="Gray"
+                       TextColor="Black"
+                       HeightRequest="45"
+                       FontSize="16" />
+            </Frame>
+
+            <Button Text="🔍 Search Recipes"
+                    Clicked="OnSearchClicked"
+                    BackgroundColor="{StaticResource ButtonGradientBrush}"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HeightRequest="45"/>
+
+            <!-- Category Picker -->
+            <Label Text="Filter by Category"
+                   FontAttributes="Bold"
+                   TextColor="#333"
+                   FontSize="16" />
+            <Picker x:Name="CategoryPicker"
+                    Title="Select Category"
+                    SelectedIndexChanged="OnCategoryChanged"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    TitleColor="Gray" />
+
+            <!-- City Picker -->
+            <Label Text="Filter by City"
+                   FontAttributes="Bold"
+                   TextColor="#333"
+                   FontSize="16" />
+            <Picker x:Name="CityPicker"
+                    Title="Select City"
+                    SelectedIndexChanged="OnCityChanged"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    TitleColor="Gray">
+                <Picker.Items>
+                    <x:String>Manchester</x:String>
+                    <x:String>Sheffield</x:String>
+                    <x:String>London</x:String>
+                    <x:String>Newcastle</x:String>
+                    <x:String>Birmingham</x:String>
+                    <x:String>Bradford</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- Recipe List -->
+            <CollectionView x:Name="RecipesListView"
+                            ItemsSource="{Binding}"
+                            SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="20"
+                               BackgroundColor="#FAFAFA"
+                               BorderColor="#E0E0E0"
+                               Padding="20"
+                               Margin="0,10"
+                               HasShadow="True">
+                            <VerticalStackLayout Spacing="10">
+                                <Label Text="{Binding Name}"
+                                       FontSize="22"
+                                       FontAttributes="Bold"
+                                       TextColor="#1D3557" />
+
+                                <Label Text="Ingredients:"
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       TextColor="#457B9D" />
+
+                                <Label Text="{Binding Ingredients}"
+                                       FontSize="14"
+                                       TextColor="#444"
+                                       LineBreakMode="WordWrap" />
+
+                                <Button Text="💾 Save Recipe"
+                                        Clicked="OnSaveRecipeClicked"
+                                        CommandParameter="{Binding .}"
+                                        IsEnabled="{Binding IsSaved, Converter={StaticResource InverseBoolConverter}}"
+                                        BackgroundColor="{StaticResource ButtonGradientBrush}"
+                                        TextColor="White"
+                                        FontAttributes="Bold"
+                                        CornerRadius="10"
+                                        HeightRequest="40"
+                                        Margin="0,10,0,0"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Add New Recipe -->
+            <Button Text="➕ Add New Recipe"
+                    Clicked="OnAddRecipeClicked"
+                    BackgroundColor="{StaticResource ButtonGradientBrush}"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HeightRequest="45" />
+
+            <!-- Saved Recipes Navigation -->
+            <Button Text="📁 View Saved Recipes"
+                    Clicked="OnSavedRecipesClicked"
+                    BackgroundColor="{StaticResource ButtonGradientBrush}"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HeightRequest="45" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

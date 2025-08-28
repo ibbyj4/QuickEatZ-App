@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="assignment_2425.MainPage"
+             BackgroundColor="#FFF8F0">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="25">
+
+            
+
+            <!-- Title -->
+            <Label
+                Text="🍽️ Welcome to QuickEatZ!"
+                FontSize="28"
+                FontFamily="OpenSansSemibold"
+                TextColor="#D72638"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <!-- Welcome Label -->
+            <Label 
+                x:Name="WelcomeLabel"
+                FontSize="18"
+                TextColor="#333333"
+                HorizontalOptions="Center"
+                FontAttributes="Italic" />
+
+            <!-- Buttons -->
+            <VerticalStackLayout Spacing="15">
+
+                <Button Text="🔍 Find Recipes"
+                        Clicked="OnFindRecipesClicked"
+                        BackgroundColor="#6A0DAD"
+                        TextColor="White"
+                        CornerRadius="20"
+                        Padding="14"/>
+
+                <Picker x:Name="CityPicker"
+                        Title="Select your city"
+                        BackgroundColor="#EFEFEF"
+                        TitleColor="#6A0DAD"
+                        TextColor="#333333"
+                        FontSize="16"
+                        />
+
+
+                <Button Text="📍 Show Recipes Based on My Location"
+                        Clicked="OnLocationRecipesClicked"
+                        BackgroundColor="#1E90FF"
+                        TextColor="White"
+                        CornerRadius="20"
+                        Padding="14"/>
+
+                <Button Text="🔊 Read Welcome Message Aloud"
+                        Clicked="OnSpeakClicked"
+                        BackgroundColor="#FFA500"
+                        TextColor="White"
+                        CornerRadius="20"
+                        Padding="14"/>
+
+                <Button Text="🔥 View Popular Recipes"
+                        Clicked="OnPopularRecipesClicked"
+                        BackgroundColor="#FF6347"
+                        TextColor="White"
+                        CornerRadius="20"
+                        Padding="14"/>
+
+                <Button Text="📌 Get My Location"
+                        Clicked="OnGetLocationClicked"
+                        BackgroundColor="#228B22"
+                        TextColor="White"
+                        CornerRadius="20"
+                        Padding="14"/>
+
+                <Button Text="Switch To Light/Dark Mode"
+                        Clicked="OnThemeSwitchClicked"
+                        BackgroundColor="{StaticResource ButtonGradientBrush}"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="45"/>
+
+
+
+                <Button Text="🚪 Logout"
+                        Clicked="OnLogoutClicked"
+                        BackgroundColor="#A9A9A9"
+                        TextColor="White"
+                        CornerRadius="20"
+                        Padding="14"/>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
