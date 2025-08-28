@@ -1,35 +1,38 @@
+# QuickEatZ – Mobile Recipe App (.NET MAUI, C#)
 
+QuickEatZ is a mobile recipe app demonstrating authentication, text-to-speech, geolocation, and recipe management. Built with **.NET MAUI (C#)** to showcase cross-platform mobile development and use of device features.
 
-# QuickEatZ
+## ✨ Features
+- **User Login & Authentication** (username/password)
+- **Recipe CRUD**: add, search, view recipes
+- **Text-to-Speech** welcome (“Welcome to QuickEatZ — let’s get cooking!”)
+- **Geolocation**: fetch current coordinates (foundation for location features)
+- **Responsive MAUI UI** with simple, clean navigation
 
-**QuickEatZ** is a mobile recipe application developed using **.NET MAUI**.  
-It allows users to:
-- Search for recipes using ingredients
-- Filter recipes by city and category
-- Save and view their favourite recipes, as well as delete them
-- Use features like accelerometer, location, and text-to-speech
+## 🧰 Tech Stack
+- **Languages:** C#, XAML
+- **Framework:** .NET MAUI
+- **IDE:** Visual Studio 2022
+- **APIs/Libs:** MAUI Essentials (TTS, Geolocation)
 
-## Features
+## ▶️ Getting Started
+**Prereqs**
+- Visual Studio 2022 with **.NET Multi-platform App UI (MAUI)** workload
+- Android SDK / Emulator (or physical device)
 
--  Ingredient-based search
--  City-specific recipe suggestions
--  Save recipes to view later
--  Text-to-Speech for accessibility
--  Location detection for regional recipes
+**Run**
+1. Clone: `git clone https://github.com/<your-username>/QuickEatZ-Recipe-App.git`
+2. Open the `.sln` in Visual Studio
+3. Restore NuGet packages
+4. Select **Android Emulator** (or device) and **Run**
 
-## Technologies Used
-- .NET MAUI (C#)
-- XAML
-- Git & GitHub for version control
+## 🧪 Testing & Notes
+- Manual test cases for Login, Add/Search Recipe, TTS, and Geolocation
+- Known limitations: geolocation shown as raw coords (future: nearby stores/filters)
+- Future ideas: categories, favorites, image upload, share recipes
 
-## How to Run the App
-1. Open the solution in **Visual Studio 2022** with .NET MAUI workload installed.
-2. Run on Android Emulator (tested on Pixel 7).
-3. Ensure location permissions are granted.
+## 📚 Learning Goals
+Demonstrates use of mobile hardware APIs, auth, CRUD patterns, and MAUI UI patterns in a compact project.
 
-## Contributors
-- Ibrahim Arfan 
-
-
-
-
+## 📝 License
+MIT
